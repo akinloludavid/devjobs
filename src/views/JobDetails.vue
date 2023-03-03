@@ -1,33 +1,37 @@
 <template>
-  <div class="">
+  <div class="xl:px-[355px] lg:px-[120px] md:px-[40px] px-6">
     <div
-      class="w-[730px] mx-auto mt-[-40px] h-[140px] rounded-[6px] flex items-center bg-white mb-8"
+      class="mx-auto mt-[-40px] md:h-[140px] h-full pb-8 md:pb-[0px] rounded-[6px] flex md:flex-row flex-col items-center bg-white dark:bg-dark-blue mb-8"
     >
       <div
-        class="w-[140px] h-[140px] flex justify-center items-center rounded-l-[6px]"
+        class="md:w-[140px] md:h-[140px] w-[50px] mt-[-25px] md:mt-[0px] h-[50px] rounded-[15px] flex justify-center items-center md:rounded-l-[6px] md:rounded-r-[0px]"
         :style="logoBgStyle"
       >
-        <img :src="jobDetails.logo" alt="" class="w-[60%]" />
+        <img :src="jobDetails.logo" :alt="jobDetails.company" class="w-[60%]" />
       </div>
       <div
-        class="flex items-center px-[40px] items-center w-full justify-between"
+        class="flex md:flex-row flex-col items-center px-[40px] items-center w-full justify-between mt-6 md:mt-[0px]"
       >
         <div>
-          <h3 class="font-bold text-xl text-dark-blue mb-[13px]">
+          <h3
+            class="font-bold md:text-xl text-center md:text-left text-lg dark:text-white text-dark-blue mb-[13px]"
+          >
             {{ jobDetails.company }}
           </h3>
           <p class="text-base text-dark-grey">{{ jobDetails.website }}</p>
         </div>
         <button
-          class="text-base font-bold text-violet py-4 px-[20px] bg-[#5964E010] rounded-[5px]"
+          class="text-base font-bold text-violet dark:text-white py-4 px-[20px] dark:bg-[#FFFFFF01] bg-[#5964E010] rounded-[5px]"
         >
           Company Site
         </button>
       </div>
     </div>
-    <div class="w-[730px] mx-auto rounded-[6px] p-12 bg-white mb-[80px]">
-      <div class="flex items-center mb-[40px]">
-        <div>
+    <div
+      class="mx-auto rounded-[6px] md:p-12 p-6 py-[40px] md:py-12 bg-white dark:bg-dark-blue mb-[80px]"
+    >
+      <div class="flex-col md:flex-row flex items-center mb-[40px]">
+        <div class="w-full md:w-auto">
           <div class="flex items-center gap-3">
             <p class="text-base font-normal text-dark-grey">
               {{ jobDetails.postedAt }}
@@ -38,7 +42,7 @@
             </p>
           </div>
           <h2
-            class="text-2xl font-bold mt-8 leading-[35px] mb-2 text-dark-blue"
+            class="md:text-2xl text-x; font-bold mt-8 leading-[35px] mb-2 dark:text-white text-dark-blue"
           >
             {{ jobDetails.position }}
           </h2>
@@ -47,7 +51,7 @@
           </p>
         </div>
         <button
-          class="bg-violet rounded-[5px] text-base font-bold text-white h-12 px-6 md:px-6 lg:px-9 ml-auto"
+          class="bg-violet mt-[50px] md:mt-[0] rounded-[5px] w-full md:w-auto text-base font-bold text-white h-12 px-6 md:px-6 lg:px-9 ml-auto"
         >
           Apply Now
         </button>
@@ -58,24 +62,27 @@
         </p>
       </div>
       <div>
-        <h3 class="font-bold text-xl leading-[25px] mb-[23px] text-dark-blue">
+        <h3
+          class="font-bold text-xl leading-[25px] mb-[23px] dark:text-white text-dark-blue"
+        >
           Requirements
         </h3>
         <p class="text-base font-normal text-dark-grey mb-6">
           {{ jobDetails.requirements.content }}
         </p>
-        <ul class="list-disc ml-4">
+        <ul class="list-disc">
           <li
-            class="text-base font-normal text-dark-grey mb-2 pl-6"
+            class="text-base font-normal text-dark-grey mb-2 flex items-center gap-4"
             v-for="item in jobDetails.requirements.items"
             :key="item"
           >
+            <div class="w-1 h-1 bg-violet rounded-full" />
             {{ item }}
           </li>
         </ul>
       </div>
       <div class="mt-8">
-        <h2 class="text-xl font-bold text-dark-blue mb-[23px]">
+        <h2 class="text-xl font-bold text-dark-blue dark:text-white mb-[23px]">
           What You Will Do
         </h2>
         <p class="text-base font-normal text-dark-grey mb-6">
@@ -92,21 +99,23 @@
         </ul>
       </div>
     </div>
-    <div class="px-[355px] h-[96px] bg-white flex items-center justify-between">
-      <div>
-        <h3 class="text-xl font-bold text-dark-blue mb-3">
-          {{ jobDetails.position }}
-        </h3>
-        <p class="text-base font-normal text-dark-grey">
-          {{ jobDetails.company }}
-        </p>
-      </div>
-      <button
-        class="bg-violet rounded-[5px] text-base font-bold text-white h-12 px-6 md:px-6 lg:px-9 ml-auto"
-      >
-        Apply Now
-      </button>
+  </div>
+  <div
+    class="xl:px-[355px] lg:px-[120px] md:px-[40px] dark:bg-dark-blue dark:text-white px-6 h-[96px] bg-white flex items-center justify-between"
+  >
+    <div class="hidden md:block">
+      <h3 class="text-xl font-bold text-dark-blue dark:text-white mb-3">
+        {{ jobDetails.position }}
+      </h3>
+      <p class="text-base font-normal text-dark-grey">
+        {{ jobDetails.company }}
+      </p>
     </div>
+    <button
+      class="bg-violet w-full md:w-auto rounded-[5px] text-base font-bold text-white h-12 px-6 md:px-6 lg:px-9 ml-auto"
+    >
+      Apply Now
+    </button>
   </div>
 </template>
 

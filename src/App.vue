@@ -4,8 +4,10 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <main class="w-screen min-h-screen">
+  <div
+    class="w-screen min-h-screen bg-[#f4f6f8] dark:bg-midnight overflow-scroll"
+  >
     <Navbar />
     <RouterView />
-  </main>
+  </div>
 </template>

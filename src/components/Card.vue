@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white rounded-[6px] px-8 flex flex-col pb-8 min-h-[228px] cursor-pointer"
+    class="bg-white dark:bg-dark-blue rounded-[6px] px-8 flex flex-col pb-8 min-h-[228px] cursor-pointer"
   >
     <div
       class="w-[50px] h-[50px] rounded-[15px] mb-6 mt-[-25px] flex justify-center items-center px-[5px]"
@@ -12,12 +12,14 @@
       <p class="text-base font-normal leading-[19px] text-dark-grey">
         {{ time }}
       </p>
-      <div class="w-1 h-1 rounded-full bg-dark-gey" />
+      <div class="w-1 h-1 rounded-full bg-dark-grey" />
       <p class="text-base font-normal leading-[19px] text-dark-grey">
         {{ contract }}
       </p>
     </div>
-    <h3 class="mt-[13px] font-bold text-lg leading-[25px] mb-[17px]">
+    <h3
+      class="mt-[13px] font-bold dark:text-white text-lg leading-[25px] mb-[17px]"
+    >
       {{ position }}
     </h3>
     <p class="text-base font-normal leading-[19px] text-dark-grey">
@@ -28,7 +30,6 @@
 </template>
 
 <script lang="ts">
-import { toRefs, defineProps, computed } from "vue";
 interface CardProps {
   position: string;
   company: string;

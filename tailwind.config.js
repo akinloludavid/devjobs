@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
@@ -47,6 +48,7 @@ module.exports = {
     },
 
     spacing: {
+      0: '0px',
       '1': '4px',
       '2': '8px',
       '3': '12px',

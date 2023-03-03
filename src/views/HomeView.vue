@@ -27,7 +27,7 @@ export default {
     <FilterSection />
 
     <div
-      class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-[30px] gap-y-[70px] mt-[80px] pb-[206px]"
+      class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-[30px] gap-y-[70px] mt-[80px] pb-[80px] md:pb-[206px]"
     >
       <Card
         class="grid-item col-1"
